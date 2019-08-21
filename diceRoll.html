@@ -1,0 +1,62 @@
+<!doctype html>
+<head>
+	<title>Dice Roller</title>
+	<link rel="stylesheet" href="diceRoll.css">
+</head>
+<body>
+	<h2>Dice Roller</h2>
+	<blockquote>Select the type of sided dice, then roll to see the result.</blockquote>
+	<p><select id="dice_sides">
+		<option value="4">Four</option>
+		<option selected value="6">Six</option>
+		<option value="8">Eight</option>
+		<option value="10">Ten</option>
+		<option value="20">Twenty</option>
+	</select>: Sided Dice</p>
+	
+	<div class="image_container">
+	<img id="image">
+	<div id="center" class="center"></div>
+	</div>
+
+	<p><button id="roll">Roll
+    </button></p>
+<script>
+document.getElementById("roll").addEventListener("click", generateValue);
+function generateValue(){	
+	let x = document.getElementById("dice_sides").value;
+	let randomx = Math.floor(Math.random() * x) + 1;
+	getSVG(x, randomx);
+}
+
+function getSVG(sides, number){
+	document.getElementById("center").innerHTML = '';
+	document.getElementById("image").src = '';
+	if(sides == '6'){
+		let imageToEmbed = "d" + sides + "-" + number + ".svg";
+		document.getElementById("image").src = imageToEmbed;
+	}
+	else if(sides =='20'){
+		let imageToEmbed = "d20.png";
+		document.getElementById("image").src = imageToEmbed;
+		document.getElementById("center").innerHTML = number;
+	}
+	else if(sides =='4'){
+		let imageToEmbed = "d4.png";
+		document.getElementById("image").src = imageToEmbed;
+		document.getElementById("center").innerHTML = number;
+	}	
+	else if(sides =='8'){
+		let imageToEmbed = "d8.jpg";
+		document.getElementById("image").src = imageToEmbed;
+		document.getElementById("center").innerHTML = number;
+	}	
+	else if(sides =='10'){
+		let imageToEmbed = "d10.jpg";
+		document.getElementById("image").src = imageToEmbed;
+		document.getElementById("center").innerHTML = number;
+	}
+}
+</script>
+</body>
+</html>

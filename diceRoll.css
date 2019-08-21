@@ -1,0 +1,31 @@
+body{
+	background-color: lightblue;
+	text-align: center;
+	font-size: 50px;}
+blockquote{
+	font-size: 40px;}
+img{
+	height: 300px;
+	width: 300px;}
+select{
+	height: 125px;
+	width: 250px;
+	font-size: 50px;}
+img{
+	animation-name: diceChange;
+	animation_duration:2s;}
+button{
+	height: 125px;
+	width: 200px;
+	font-size: 50px;}
+
+.image_container{
+	position: relative;
+	text-align: center;
+}
+.center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
